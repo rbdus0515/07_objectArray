@@ -248,10 +248,10 @@ public class MemberService {
 		// 이름 : 홍길동
 		// 아이디 : user01
 		// 나이 : 25세
-		String str = "이름 : " + memberInfo.getMemberName();
-		str += "\n아이디 : " + memberInfo.getMemberId();
-		str += "\n나이 : " + memberInfo.getMemberAge() + "세";
-		str += "\n지역 : " + memberInfo.getRegion();
+		String str = "이름 : " + loginMember.getMemberName();
+		str += "\n아이디 : " + loginMember.getMemberId();
+		str += "\n나이 : " + loginMember.getMemberAge() + "세";
+		str += "\n지역 : " + loginMember.getRegion();
 
 		return str;
 
@@ -271,10 +271,13 @@ public class MemberService {
 		// 2) 로그인이 되어 있을때
 		// 2-1) 수정할 회원 정보 입력 받기(이름, 나이)
 		System.out.print("수정할 이름 입력 : ");
-		String reMemberName = sc.next();
+		String inputName = sc.next();
 
 		System.out.print("수정할 나이 입력 : ");
-		int reMemberAge = sc.nextInt();
+		int inputAge = sc.nextInt();
+		
+		System.out.print("수정할 지역 입력 : ");
+		String inputRegion = sc.next();
 
 
 		// 2-2) 비밀번호를 입력 받아서 로그인한 회원의 비밀번호와 일치하는지 확인
@@ -285,8 +288,10 @@ public class MemberService {
 		// 		로그인한 회원의 이름, 나이 정보를 입력 받은 값으로 변경 후
 		//		1 반환
 		if(inputPw.equals(loginMember.getMemberPw())) {
-			loginMember.setMemberName(reMemberName);
-			loginMember.setMemberAge(reMemberAge);
+			loginMember.setMemberName(inputName);
+			loginMember.setMemberAge(inputAge);
+			loginMember.setRegion(inputRegion);
+			
 			return 1;
 		} else {
 			// -> 비밀번호가 다를 경우 0 반환

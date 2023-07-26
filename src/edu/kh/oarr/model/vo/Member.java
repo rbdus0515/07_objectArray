@@ -27,7 +27,9 @@ public class Member {
 	
 	// 오버로딩
 	// 매개변수의 타입, 순서, 개수가 달라야한다.
-	public Member(String memberId, String memberPw, String memberName, int memberAge, String region) { // 매개변수 생성자
+	public Member(String memberId, String memberPw,
+				  String memberName, int memberAge,
+				  String region) { // 매개변수 생성자
 
 		this.memberId = memberId;
 		this.memberPw = memberPw;
